@@ -19,7 +19,8 @@ const Logo = styled.h1`
   margin: 0;
   color: #fff;
   font-weight: 800;
-  font-size: 60px;
+  font-size: 55px;
+  padding: 0px 10px;
 
   @media (max-width: 600px) {
     font-size: 30px;
@@ -32,6 +33,7 @@ const Slogan = styled.h4`
   font-weight: 700;
   font-size: 20px;
   margin-top: 10px;
+  padding: 0px 10px;
 `;
 
 const Paragraph = styled.p`
@@ -43,6 +45,13 @@ const Paragraph = styled.p`
   font-weight: 500;
   max-width: 30%;
   text-align: center;
+
+  @media (max-width: 800px) {
+    max-width: 50%;
+  }
+  @media (max-width: 600px) {
+    max-width: 80%;
+  }
 `;
 
 const DonateButton = styled.button`
@@ -64,7 +73,7 @@ const DonateButton = styled.button`
   }
 `;
 
-const MadeBy = styled.h3`
+const MadeBy = styled.h5`
   color: #fff;
   position: fixed;
   bottom: 5px;
