@@ -1,5 +1,8 @@
+import { Canvas } from '@react-three/fiber';
+import { Suspense } from 'react';
 import styled from 'styled-components';
 import './App.css';
+import Earth from './components/earth';
 
 const CanvasContainer = styled.div`
   width: 100%;
@@ -7,7 +10,15 @@ const CanvasContainer = styled.div`
 `;
 
 function App() {
-  return <CanvasContainer>Holla js </CanvasContainer>;
+  return (
+    <CanvasContainer>
+      <Canvas>
+        <Suspense fallback={null}>
+          <Earth />
+        </Suspense>
+      </Canvas>
+    </CanvasContainer>
+  );
 }
 
 export default App;
