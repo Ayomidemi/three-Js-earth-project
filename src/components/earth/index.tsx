@@ -2,7 +2,7 @@
 import { useFrame, useLoader } from '@react-three/fiber';
 import React, { useRef } from 'react';
 import { TextureLoader } from 'three';
-import { OrbitControls, Stars } from '@react-three/drei';
+import { Stars } from '@react-three/drei';
 import * as THREE from 'three';
 
 import EarthDayMap from '../../assets/cloud.jpeg';
@@ -28,7 +28,7 @@ const Earth = () => {
 
   return (
     <>
-      <pointLight color="f6f3ea" position={[2, 0, 2]} intensity={1.2} />
+      <pointLight color="f6f3ea" position={[2, 0, 5]} intensity={1.2} />
       <Stars
         radius={200}
         depth={60}
@@ -37,7 +37,7 @@ const Earth = () => {
         saturation={0}
         fade={true}
       />
-      <mesh>
+      <mesh ref={cloudsRef} position={[0, 0, 3]}>
         <sphereGeometry args={[1.005, 32, 32]} />
         <meshPhongMaterial
           opacity={0.4}
@@ -47,7 +47,7 @@ const Earth = () => {
           side={THREE.DoubleSide}
         />
       </mesh>
-      <mesh ref={earthRef}>
+      <mesh ref={earthRef} position={[0, 0, 3]}>
         <sphereGeometry args={[1, 32, 32]} />
         <meshPhongMaterial specularMap={specularMap} />
         <meshStandardMaterial
@@ -56,14 +56,14 @@ const Earth = () => {
           metalness={0.4}
           roughness={0.7}
         />
-        <OrbitControls
+        {/* <OrbitControls
           enableZoom={true}
           enablePan={true}
           enableRotate={true}
           zoomSpeed={0.6}
           panSpeed={0.5}
           rotateSpeed={0.4}
-        />
+        /> */}
       </mesh>
     </>
   );
