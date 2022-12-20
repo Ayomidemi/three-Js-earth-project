@@ -5,10 +5,10 @@ import { TextureLoader } from 'three';
 import { Stars } from '@react-three/drei';
 import * as THREE from 'three';
 
-import EarthDayMap from '../../assets/cloud.jpeg';
+import EarthDayMap from '../../assets/cloud.jpg';
 import EarthNormalMap from '../../assets/normal_map.jpeg';
 import EarthSpecularMap from '../../assets/map.jpeg';
-import EarthCloudsMap from '../../assets/earth_clouds.jpg';
+import EarthCloudsMap from '../../assets/earth_clouds_resized.jpg';
 
 const Earth = () => {
   const [colorMap, normalMap, specularMap, cloudsMap] = useLoader(
@@ -30,9 +30,9 @@ const Earth = () => {
     <>
       <pointLight color="f6f3ea" position={[2, 0, 5]} intensity={1.2} />
       <Stars
-        radius={200}
+        radius={150}
         depth={60}
-        count={10000}
+        count={8000}
         factor={7}
         saturation={0}
         fade={true}
